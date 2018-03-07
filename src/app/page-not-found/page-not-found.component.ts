@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MindSerService } from '../mind-ser.service';
-
 
 import {
   DomSanitizer
@@ -15,11 +13,11 @@ import {
 declare var $: any;
 
 @Component({
-  selector: 'app-view',
-  templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  selector: 'app-page-not-found',
+  templateUrl: './page-not-found.component.html',
+  styleUrls: ['./page-not-found.component.css']
 })
-export class ViewComponent implements OnInit {
+export class PageNotFoundComponent implements OnInit {
 
   constructor(private mindSer: MindSerService, private thisrouter: Router, public sanitizer: DomSanitizer) { }
 

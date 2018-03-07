@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+
+<form class="form-signin text-center">
+  <img class="mb-4" src="https://cmeimg-a.akamaihd.net/640/clsd/getty/fb24f58bd5ef463590a59cc961686ef0" alt="" width=200>
+  <h1 class="h3 mb-3 font-weight-normal">Inloggings</h1>
+  <label for="inputEmail" class="sr-only">Wie?</label>
+  <input (ngModel)="inputEmail" type="email" id="inputEmail" class="form-control" placeholder="Wie?" required autofocus>
+  <label for="inputPassword" class="sr-only">Wachtwoord</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Wachtwoord" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me maddafakka
+    </label>
+  </div>
+  <button (click)="logInNow()" class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+  <p class="mt-5 mb-3 text-muted">2018 - TvBree</p>
+</form>
