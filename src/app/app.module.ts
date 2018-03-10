@@ -10,12 +10,14 @@ import { LoginComponent } from './login/login.component';
 import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ObjectsComponent } from './objects/objects.component';
 
 // routes
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'view', component: ViewComponent },
   { path: 'edit', component: EditComponent },
+  { path: 'objects', component: ObjectsComponent },
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
@@ -29,7 +31,8 @@ const appRoutes: Routes = [
     LoginComponent,
     ViewComponent,
     EditComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ObjectsComponent
   ],
   imports: [
     BrowserModule,

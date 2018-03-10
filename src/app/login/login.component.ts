@@ -1,5 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { MindSerService } from '../mind-ser.service';
+import {
+  Component,
+  EventEmitter,
+  OnInit
+} from '@angular/core';
+
+// we want the login component injected for authentication ui managing.
+
+import {
+  AppComponent
+} from '../app.component';
+
+
+import {
+  MindSerService
+} from '../mind-ser.service';
 
 import {
   DomSanitizer
@@ -10,6 +24,7 @@ import {
   ActivatedRoute,
   Params
 } from '@angular/router';
+
 declare var $: any;
 
 @Component({
@@ -19,20 +34,28 @@ declare var $: any;
 })
 export class LoginComponent implements OnInit {
 
+
+
   //
   inputEmail;
 
   inputPwd;
 
-  constructor(private mindSer: MindSerService, private thisrouter: Router, public sanitizer: DomSanitizer) { }
+  constructor(private mindSer: MindSerService, private thisrouter: Router, public sanitizer: DomSanitizer) {
+    mindSer.loadUIState$.subscribe(
+      some => {
+        console.log(`${some} from login rxjs`);
+      });
+  }
 
   ngOnInit() {
+
   }
 
 
   // logging in
-  logInNow(){
-    console.log("yay");
+  logInNow() {
+    this.mindSer.activateUI(true);
     this.thisrouter.navigate(['view']);
   }
 
